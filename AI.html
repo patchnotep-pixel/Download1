@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI 설치 프로그램</title>
+
+<style>
+body {
+  background: radial-gradient(circle at top, #0a0f1a, #000);
+  color: #d7e1ff;
+  font-family: Consolas, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.window {
+  width: 520px;
+  background: #111827;
+  border: 1px solid #2b3a55;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,255,180,0.15);
+  overflow: hidden;
+}
+
+.header {
+  background: #0b1220;
+  padding: 10px;
+  font-size: 13px;
+  border-bottom: 1px solid #2b3a55;
+  color: #9fb3ff;
+}
+
+.body {
+  padding: 20px;
+}
+
+.title {
+  font-size: 18px;
+  color: #66ffcc;
+  margin-bottom: 10px;
+}
+
+.sub {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.log {
+  height: 140px;
+  background: #05070d;
+  border: 1px solid #1f2a44;
+  padding: 10px;
+  font-size: 12px;
+  overflow: hidden;
+  color: #b7c7ff;
+}
+
+.bar {
+  margin-top: 15px;
+  height: 14px;
+  background: #0a0f1a;
+  border: 1px solid #2b3a55;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00ff99, #00ccff);
+  transition: width 0.25s;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #00ff99;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #00cc7a;
+}
+</style>
+</head>
+
+<body>
+
+<div class="window">
+  <div class="header">
+    AI 빌더 설치 프로그램 (Alpha Build v0.9.1 | Secure Core)
+  </div>
+
+  <div class="body">
+    <div class="title">AI System Installer</div>
+    <div class="sub">필수 모듈 다운로드 및 환경 구성 중...</div>
+
+    <div class="log" id="log"></div>
+
+    <div class="bar">
+      <div class="fill" id="fill"></div>
+    </div>
+
+    <button onclick="startInstall()">Start Installation</button>
+  </div>
+</div>
+
+<script>
+const logBox = document.getElementById("log");
+const fill = document.getElementById("fill");
+
+const logs = [
+  "Checking system integrity...",
+  "Scanning hardware compatibility...",
+  "Allocating memory blocks...",
+  "Loading AI kernel modules...",
+  "Injecting performance optimizer...",
+  "Bypassing latency limiter...",
+  "Calibrating neural interface...",
+  "Connecting to secure build server...",
+  "Verifying digital signature...",
+  "Finalizing installation pipeline..."
+];
+
+function addLog(text) {
+  logBox.innerHTML += text + "<br/>";
+  logBox.scrollTop = logBox.scrollHeight;
+}
+
+function startInstall() {
+  let i = 0;
+  let progress = 0;
+
+  addLog("▶ Installation started...");
+
+  let interval = setInterval(() => {
+
+    if (i < logs.length) {
+      addLog("✔ " + logs[i]);
+      i++;
+    }
+
+    progress += Math.floor(100 / logs.length);
+    fill.style.width = progress + "%";
+
+    if (progress >= 100) {
+      clearInterval(interval);
+
+      addLog("✔ Installation Complete.");
+      addLog("▶ Launching AI core module...");
+
+      setTimeout(() => {
+        window.location.href =
+          "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+      }, 1200);
+    }
+
+  }, 450);
+}
+</script>
+
+</body>
+</html>
